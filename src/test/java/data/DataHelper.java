@@ -2,6 +2,8 @@ package data;
 
 import lombok.Value;
 
+import java.util.Random;
+
 public class DataHelper {
     private DataHelper() {}
 
@@ -24,4 +26,19 @@ public class DataHelper {
     public static VerificationCode getVerificationCodeFor(AuthInfo authInfo) {
         return new VerificationCode("12345");
     }
+
+    @Value
+    public static class CreditCard {
+        private String numberCard;
+        private String balanceCard;
+    }
+
+
+    public static int generateRandomInt(int max){
+        Random random = new Random();
+        int num = random.nextInt(10000);
+        return num;
+    }
+
+
 }
