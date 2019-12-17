@@ -28,7 +28,7 @@ class MoneyTransferTest {
         val balanceCardOne = dashBoardPage.getCheckBalanceCardOne();
         val balanceCardTwo = dashBoardPage.getCheckBalanceCardTwo();
         val cardPage = dashBoardPage.cardOnePage();
-        int amount = DataHelper.generateRandomInt(CreditCard.getBalanceCard());
+        int amount = DataHelper.generateRandomInt(balanceCardOne);
         cardPage.transferFromInfoBalance(cardTwo, amount);
         CreditCard.transferMoneyCardToCard(cardOne, cardTwo, amount);
         assertEquals(balanceCardOne + amount, dashBoardPage.getCheckBalanceCardOne());

@@ -25,10 +25,7 @@ public class CreditCard {
         cardTwo.setBalanceCard(cardTwo.getBalanceCard() + amount);
     }
 
-    public static int getBalanceCard() {
-        int balance = 10000;
-        return balance;
-    }
+
 
 }
 
