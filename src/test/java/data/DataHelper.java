@@ -34,7 +34,7 @@ public class DataHelper {
     }
 
 
-    public static int generateRandomInt(int max){
+    public static int generateRandomInt(int balanceCard){
         Random random = new Random();
         int num = random.nextInt(10000);
         return num;

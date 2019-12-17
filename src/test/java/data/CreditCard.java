@@ -26,7 +26,8 @@ public class CreditCard {
     }
 
     public static int getBalanceCard() {
-        return 10000;
+        int balance = 10000;
+        return balance;
     }
 
 }

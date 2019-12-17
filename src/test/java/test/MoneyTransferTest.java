@@ -25,11 +25,13 @@ class MoneyTransferTest {
         val verificationPage = loginPage.validLogin(authInfo);
         val verificationCode = DataHelper.getVerificationCodeFor(authInfo);
         val dashBoardPage = verificationPage.validVerify(verificationCode);
+        val balanceCardOne = dashBoardPage.getCheckBalanceCardOne();
+        val balanceCardTwo = dashBoardPage.getCheckBalanceCardTwo();
         val cardPage = dashBoardPage.cardOnePage();
-        int amount = DataHelper.generateRandomInt(cardOne.getBalanceCard());
+        int amount = DataHelper.generateRandomInt(CreditCard.getBalanceCard());
         cardPage.transferFromInfoBalance(cardTwo, amount);
         CreditCard.transferMoneyCardToCard(cardOne, cardTwo, amount);
-        assertEquals(dashBoardPage.getCheckBalanceCardOne(), cardOne.getBalanceCard() + amount);
-        assertEquals(dashBoardPage.getCheckBalanceCardTwo(), cardTwo.getBalanceCard() - amount);
+        assertEquals(balanceCardOne + amount, dashBoardPage.getCheckBalanceCardOne());
+        assertEquals(balanceCardTwo - amount, dashBoardPage.getCheckBalanceCardTwo());
     }
 }
